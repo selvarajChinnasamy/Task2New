@@ -1,0 +1,4 @@
+<select [(ngModel)]="selectedValue">
+  <option *ngFor="let data of states" value="{{data}}">{{data}}</option>
+</select>
+<app-district [state]="selectedValue"></app-district>

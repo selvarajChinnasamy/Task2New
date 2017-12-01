@@ -1,0 +1,5 @@
+<p (onchange)="changed()">{{state}}</p>
+<select [(ngModel)]="selectedValue">
+  <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
+</select>
+<app-city [district]="selectedValue" ></app-city>
