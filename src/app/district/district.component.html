@@ -1,5 +1,7 @@
 <p (onchange)="changed()">{{state}}</p>
-<select [(ngModel)]="selectedValue">
+<form [formGroup]="districtForm">  
+<select  formControlName="district">
   <option *ngFor="let district of districts" value="{{district}}">{{district}}</option>
 </select>
+</form>
 <app-city [district]="selectedValue" ></app-city>

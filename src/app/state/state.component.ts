@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataServiceService } from '../data-service.service';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';    
 
 @Component({
   selector: 'app-state',
@@ -8,12 +9,26 @@ import { DataServiceService } from '../data-service.service';
 })
 export class StateComponent implements OnInit {
 
-  states=[]
+  states=[];
+  selectForm: FormGroup;
   selectedValue:any;
-  constructor(private dataservice:DataServiceService) { }
+  constructor(private dataservice:DataServiceService,private fb: FormBuilder) { }
   
+  buildForm() {
+    this.selectForm = this.fb.group({
+      state: ['', Validators.compose([
+        Validators.required
+      ])],
+    });
+    this.selectForm.controls['state'].valueChanges.subscribe((value) => {
+      console.log(value);
+      this.selectedValue=value;
+    });
+  }
+
   ngOnInit() {
     this.states=this.dataservice.states;
+    this.buildForm();
   }
  
 }

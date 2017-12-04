@@ -8,6 +8,9 @@ export class DataServiceService {
   kerala=['kottayam','kochi'];
   kottayam=['kottayam','Karukachal'];
   palani=['dindigul','palani'];
+  erode=['sathy','Dharapuram'];
+  chennai=['chennai-west','chennai-east'];
+  kochi=['kochi-central','kochi'];
   states=['TamilNadu','Kerala']
 
   getDistrict(name:string){
@@ -24,6 +27,12 @@ export class DataServiceService {
     }
     else if(name=='kottayam'){
      return this.kottayam;
-    }
+    }else if(name=='erode'){
+      return this.erode;
+     }else if(name=='chennai'){
+      return this.chennai;
+     }else if(name=='kochi'){
+      return this.kochi;
+     }
      }
 }
