@@ -20,5 +20,6 @@ export class CityComponent implements OnInit {
     console.log('prev value: ', district.previousValue);
     console.log('got name: ', district.currentValue);
     this.city=this.dataservice.getCity(district.currentValue);
+    console.log(this.city);
   }
 }

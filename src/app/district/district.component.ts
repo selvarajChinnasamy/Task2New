@@ -33,6 +33,7 @@ buildForm() {
   console.log('prev value: ', state.previousValue);
   console.log('got name: ', state.currentValue);
   this.districts=this.dataservice.getDistrict(state.currentValue);
+  console.log(this.districts);
   this.selectedValue='';
 }
   }
