@@ -11,7 +11,7 @@ export class StateComponent implements OnInit {
 
   states=[];
   selectForm: FormGroup;
-  selectedValue:any;
+  selectedValue:string;
   constructor(private dataservice:DataServiceService,private fb: FormBuilder) { }
   
   buildForm() {
