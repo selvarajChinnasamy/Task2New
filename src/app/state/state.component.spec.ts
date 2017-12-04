@@ -5,7 +5,6 @@ import {DataServiceService } from '../data-service.service';
 import { DistrictComponent } from '../district/district.component';
 import { CityComponent } from '../city/city.component';
 import { By } from '@angular/platform-browser';
-import { empty } from 'rxjs/Observer';
 
 describe('StateComponent', () => {
   let component: StateComponent;
@@ -14,6 +13,9 @@ describe('StateComponent', () => {
   let fixture1: ComponentFixture<DistrictComponent>;
   let citycomponent: CityComponent;
   let fixture2: ComponentFixture<CityComponent>;
+  let userService:DataServiceService;
+ 
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, FormsModule],
@@ -34,13 +36,13 @@ describe('StateComponent', () => {
     citycomponent.ngOnInit();
   }));
 
-  // it('form invalid when empty', () => {
-  //   expect(component.selectForm.valid).toBeTruthy();
-  // });
+  it('form invalid when empty', () => {
+    expect(component.selectForm.valid).toBeFalsy();
+  });
 
-  // it('form invalid when empty', () => {
-  //   expect(districtcomponent.districtForm.valid).toBeTruthy();
-  // });
+  it('form invalid when empty', () => {
+    expect(districtcomponent.districtForm.valid).toBeFalsy();
+  });
 
   it('State field validity', () => {
     let errors = {};
